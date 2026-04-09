@@ -125,6 +125,8 @@ import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import { useAuthStore } from "./store/authStore";
 import type { JSX } from "react";
+import GestaoTags from "./pages/gestaoTags";
+import TagsList from "./pages/tagList";
 
 function PrivateRoute({ children }: { children: JSX.Element }) {
   const { isAuthenticated } = useAuthStore();
@@ -143,6 +145,8 @@ export default function App() {
           </PrivateRoute>
         }
       />
+      <Route path="/gestao-tags" element={<GestaoTags />} />
+      <Route path="/tags" element={<TagsList />} />
     </Routes>
   );
 }
